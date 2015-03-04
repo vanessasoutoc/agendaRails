@@ -1,7 +1,7 @@
 <div class="col-lg-4"></div>
 <div class="col-lg-4">
 	<h1>Editar Usuários</h1>
-	<%= form_for @user, url: edit_user_path do |f| %>
+	<%= form_for @user, url: edit_user_path  do |f| %>
 	<div class="form-group">
 		<%= f.label 'Nome:' %><br />
 		<%= f.text_field :fullname, autofocus: true, :class => "form-control" %>
@@ -26,7 +26,7 @@
 	</div>
 	<div class="form-group">
 		<%= f.label 'Administrador' %>&ensp;
-		<%= f.check_box :admin, {:checked=>false}, "true", "false" %>
+		<%= f.check_box :admin,  "true", "false" %>
 	</div>
 
 	<div class="actions">
