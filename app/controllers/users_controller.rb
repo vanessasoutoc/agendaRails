@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 	# as shown by diego.greyrobot
 	def authorize_admin
 		return unless !current_user.admin?
-		redirect_to root_path, alert: 'Admins only!'
+		redirect_to root_path, alert: 'Apenas Administradores!'
 	end
 	def set_user
 		@user = User.find(params[:id])
