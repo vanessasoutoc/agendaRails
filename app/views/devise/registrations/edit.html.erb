@@ -32,6 +32,10 @@
 		<%= f.label 'Senha Antiga:' %> <i>(precisamos de sua senha atual para confirmar as alterações)</i><br />
 		<%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
 	</div>
+	<div class="form-group">
+		<%= f.label 'Administrador' %>&ensp;
+		<%= f.check_box :admin, {:checked=>false}, "true", "false" %>
+	</div>
 
 	<div class="actions">
 		<%= f.submit "Alterar", class: 'btn btn-success pull-right'%>

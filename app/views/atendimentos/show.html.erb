@@ -4,7 +4,7 @@
 	<%= @atendimento.id %>
 	<br><br>
 	<label>Data:</label>
-	<%= @atendimento.date %>
+	<%= @atendimento.date.strftime("%-d/%-m/%Y %H:%M") %>
 	<br><br>
 
 
