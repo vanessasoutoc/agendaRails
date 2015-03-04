@@ -1,0 +1,33 @@
+<%= form_for User.new, url: create_user_path do |f| %>
+<div class="form-group">
+	<%= f.label 'Nome:' %><br />
+	<%= f.text_field :fullname, autofocus: true, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label 'E-mail:' %><br />
+	<%= f.email_field :email, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label 'Senha:' %>
+	<% if @validatable %>
+	<em>(<%= @minimum_password_length %> caracteres minímos)</em>
+	<% end %><br />
+	<%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label 'Confirmar senha:' %><br />
+	<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+</div>
+<div class="form-group">
+	<%= f.label 'Administrador' %>&ensp;
+	<%= f.check_box :admin, {:checked=>true}, class: 'form-control' %>
+</div>
+
+<div class="actions">
+	<%= link_to 'Voltar', users_path, :class => 'btn btn-default pull-right' %><%= f.submit "Salvar", class: 'btn btn-primary pull-right', style: 'margin-right: 10px' %>
+	
+	<% end %>
+</div>

@@ -1,0 +1,25 @@
+<%= link_to 'Novo Atendimento', new_atendimento_path, :class => 'btn btn-primary pull-right' %>
+<br><br><br>
+<div id="calendar"></div>
+<script>
+
+
+
+	var calendar = $('#calendar').fullCalendar({
+		lang: 'pt-br',
+		defaultTimedEventDuration: '00:30:00',
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay'
+		},
+		events: '/atendimentos.json'
+		// put your options and callbacks here
+
+	})
+</script>
+
+
+<br>
+
+

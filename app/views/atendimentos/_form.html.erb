@@ -1,0 +1,56 @@
+<%= form_for(@atendimento) do |f| %>
+<% if @atendimento.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@atendimento.errors.count, "error") %> prohibited this atendimento from being saved:</h2>
+
+	<ul>
+		<% @atendimento.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+	<div class="row">
+		<div class="form-group col-lg-4">
+			<%= f.label 'Data:', class: 'control-label' %><br>
+			<%= f.text_field( :date, id: 'datetimepicker', class: 'form-control') %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-lg-6">
+			<%= f.label 'Cliente:' %><br>
+
+			<%= f.text_field :title, :class => "form-control" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-lg-8">
+			<%= f.label 'Observações:' %><br>
+			<%= f.text_area :description, :class => "form-control" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6"></div>
+		<div class="actions">
+			<%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+			<%= link_to 'Voltar', atendimentos_path, :class => 'btn btn-default' %>
+		</div>
+	</div>
+</div>
+
+<% end %>
+<script>
+	$(document).ready(function(){
+		jQuery('#datetimepicker').datetimepicker({
+			format:'d/m/Y H:i',
+			lang: 'pt-BR',
+			allowTimes:[
+				'8:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '21:00', '21:30'
+			],
+			step:1
+		});
+
+	})
+
+</script>

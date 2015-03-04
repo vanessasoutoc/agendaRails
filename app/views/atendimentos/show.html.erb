@@ -1,0 +1,23 @@
+<center>
+<br><br><br><br>
+	<label>Atendimento nº:</label>
+	<%= @atendimento.id %>
+	<br><br>
+	<label>Data:</label>
+	<%= @atendimento.date %>
+	<br><br>
+
+
+
+	<label>Cliente:</label>
+	<%= @atendimento.title %>
+	<br><br>
+
+
+	<label>Observações:</label>
+	<%= @atendimento.description %>
+	<br><br>
+
+	<%= link_to 'Editar', edit_atendimento_path(@atendimento), :class => 'btn btn-primary' %> |
+	<%= link_to 'Voltar', atendimentos_path, :class => 'btn btn-default' %>
+</center>

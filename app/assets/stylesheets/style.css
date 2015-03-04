@@ -1,0 +1,75 @@
+#atendimentos table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#atendimentos td,
+#atendimentos th {
+	font-family: "Lucida Grande",arial,helvetica,sans-serif;
+	font-size: 10px;
+	padding: 6px;
+	border: 1px solid #999;
+}
+
+#atendimentos th {
+	background: #DDD;
+	color: #666;
+	text-align: center;
+	width: 14.2857142857143%;
+}
+
+#atendimentos td {
+	background: #FFF;
+	color: #777;
+	height: 80px;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+#atendimentos .notmonth {
+	color: #CCC;
+}
+
+#atendimentos #month {
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+#atendimentos #month a, #atendimentos #month a:hover {
+	text-decoration: none;
+	padding: 0 10px;
+	color: #999;
+}
+
+#atendimentos .today {
+	background-color: #D7F2FF;
+}
+
+#atendimentos ul {
+	margin: 0;
+	margin-top: 5px;
+	padding: 0;
+	list-style: none;
+}
+
+#atendimentos li {
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+	text-align: center;
+}
+.fc-content {
+	color: white;
+	background-color: #dd4814;
+
+}
+.fc-event {
+	border: 1px solid #dd4814!important;
+	background-color: #dd4814!important;
+}
+
+a:visited {
+ color: white
+}

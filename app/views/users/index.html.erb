@@ -1,0 +1,48 @@
+<div class="page-header" style="text-align: center">
+	<h1>Usuários</h1>
+</div>
+
+<br />
+<div class="container-fluid">
+
+
+	<%= link_to 'Novo Usuário', new_user_path, class: "btn btn-primary", style: "float: right" %>
+
+	<table class="table">
+		<%= %>
+		<thead>
+			<tr>
+				<th>Código</th>
+				<th>Nome</th>
+				<th>E-mail</th>
+				<th>Admin</th>
+				<th>Último acesso</th>
+				<th colspan="1"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.fullname %></td>
+				<td><%= user.email %></td>
+				<td><%= user.user_admin %></td>
+				<td><% if user.last_sign_in_at != nil %><%= user.last_sign_in_at.strftime("%-d/%-m/%Y %H:%M") %><% end %></td>
+				<!--<td><%= link_to 'Ver', user, class: "btn btn-primary btn-xs" %></td>-->
+				<!--<td><%= link_to 'Editar', edit_user_path(user), class: "btn btn-warning btn-xs" %></td>-->
+
+				<td><% if current_user.id != user.id && user.email != 'admin@admin.com.br' %><%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' }, class: "btn btn-danger btn-xs" %>
+					<% else %>
+					<% end %>
+				</td>
+			</tr>
+
+			<% end %>
+		</div>
+
+	</tbody>
+</table>
+
+
+<br>
